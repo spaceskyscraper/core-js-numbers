@@ -18,8 +18,8 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleArea(width, height) {
+  return width * height;
 }
 
 /**
@@ -33,9 +33,11 @@ function getRectangleArea(/* width, height */) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCircleCircumference(/* radius */) {
-  throw new Error('Not implemented');
+function getCircleCircumference(radius) {
+  return 2 * Math.PI * radius;
 }
+
+// console.log(getCircleCircumference(5));
 
 /**
  * Returns an average of two given numbers.
@@ -49,9 +51,15 @@ function getCircleCircumference(/* radius */) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage(value1, value2) {
+  if (value1 + value2 > Number.MAX_VALUE) {
+    return Number.MAX_VALUE;
+  }
+
+  return (value1 + value2) / 2;
 }
+
+// console.log(getAverage(-3, 3));
 
 /**
  * Returns a distance between two points by cartesian coordinates.
@@ -122,9 +130,11 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(value) {
+  return value % 10;
 }
+
+// console.log(getLastDigit(13));
 
 /**
  * Returns a number by given string representation.
@@ -137,8 +147,8 @@ function getLastDigit(/* value */) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+function parseNumberFromString(value) {
+  return Number(value);
 }
 
 /**
@@ -154,10 +164,11 @@ function parseNumberFromString(/* value */) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getParallelepipedDiagonal(a, b, c) {
+  return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
 }
 
+// console.log(getParallelepipedDiagonal(1, 1, 1));
 /**
  * Returns the number rounded to specified power of 10.
  *
@@ -230,8 +241,8 @@ function toNumber(/* value, def */) {
  *   -2 => -8
  *   0  => 0
  */
-function getCube(/* num */) {
-  throw new Error('Not implemented');
+function getCube(num) {
+  return num ** 3;
 }
 
 /**
@@ -262,9 +273,17 @@ function getFibonacciNumber(/* index */) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(/* n */) {
-  throw new Error('Not implemented');
+function getSumToN(n) {
+  let sum = 0;
+
+  for (let i = 1; i <= n; i += 1) {
+    sum += i;
+  }
+
+  return sum;
 }
+
+// console.log(getSumToN(10));
 
 /**
  * Returns the sum of the digits of a given number.
@@ -277,9 +296,19 @@ function getSumToN(/* n */) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-function getSumOfDigits(/* num */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(num) {
+  return num
+    .toString()
+    .split('')
+    .reduce((accumulator, currentValue) => accumulator + +currentValue, 0);
 }
+
+/*
+ error  Arrow function should not return assignment     no-return-assign error  Assignment to function parameter 'accumulator'  no-param-reassign -
+ потому что accumulator += currentValue - это присваивание. Лучше ЯВНО суммировать без знака равно внутри стрелочной функции метода reduce()
+*/
+
+// console.log(getSumOfDigits(123));
 
 /**
  * Returns true if the given number is a power of two, false otherwise.
@@ -292,9 +321,11 @@ function getSumOfDigits(/* num */) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num) {
+  return Math.log2(num) % 1 === 0;
 }
+
+// console.log(isPowerOfTwo(15));
 
 /**
  * Returns the sine of a number.
