@@ -470,8 +470,8 @@ function isNumber(/* number */) {
  * '5'  => false
  */
 // 25. Task
-function isInteger(/* number */) {
-  throw new Error('Not implemented');
+function isInteger(number) {
+  return Number.isInteger(number);
 }
 
 /**
