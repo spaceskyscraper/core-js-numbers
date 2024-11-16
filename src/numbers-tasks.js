@@ -550,8 +550,8 @@ function roundToSmallestInteger(/* number */) {
  * -5.9 => -5
  */
 // 30. Task
-function roundToLargestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToLargestInteger(number) {
+  return Math.ceil(number);
 }
 
 /**
