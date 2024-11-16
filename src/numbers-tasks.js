@@ -520,8 +520,8 @@ function getIntegerOnString(/* str, base */) {
  * 2 ** 53  => false
  */
 // 28. Task
-function isSafeInteger(/* number */) {
-  throw new Error('Not implemented');
+function isSafeInteger(number) {
+  return Number.isSafeInteger(number);
 }
 
 /**
