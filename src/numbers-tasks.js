@@ -672,9 +672,22 @@ function getHypotenuse(a, b) {
  * 15 => 8
  */
 // 37. Task
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
+function getCountOfOddNumbers(number) {
+  let oddNumbersCounter = 0;
+
+  for (let i = 0; i <= Math.abs(number); i += 1) {
+    if (i % 2 === 1) {
+      oddNumbersCounter += 1;
+    }
+  }
+
+  return oddNumbersCounter;
 }
+
+// console.log(getCountOfOddNumbers(2));
+/*
+1. Check number is odd - !(value % 2) или i % 2 === 1
+*/
 
 module.exports = {
   getRectangleArea,
