@@ -535,8 +535,8 @@ function isSafeInteger(/* number */) {
  * -5.1 => -6
  */
 // 29. Task
-function roundToSmallestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToSmallestInteger(number) {
+  return Math.floor(number);
 }
 
 /**
